@@ -1,2 +1,2 @@
 # FBLA---Personal-Finance-Tracker
-An quick and easy to use personal finance tracker. Track your account balance and enter transactions. A list of transactions and a graph of your current balance, incomes, and expenses will be displayed.
+An quick and easy to use personal finance tracker. Track your account balance and enter transactions. A list of transactions and a graph of your current balance, incomes, and expenses will be displayed. When you are finished entering your transactions, you can download a PDF of your finance report which displays your starting balance, current balance, a list of your transactions, and a graph of your current account balance, incomes, and expenses!

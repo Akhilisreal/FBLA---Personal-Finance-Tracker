@@ -1,0 +1,79 @@
+<html lang="en">
+    <head>
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+        <title>Person Finance Tracker</title>
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,700|Montserrat:300" rel="stylesheet">
+        <link rel = "stylesheet" href = "style.css">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    </head>
+    <body>
+        <h1>Personal Finance Tracker</h1>
+
+        <!--Setting up Starting Balance Entry Here-->
+        <div class = "balance-setup">
+            <label for = "startingBalance">Starting Balance: </label>
+            <input type = "number" id = "startingBalance" placeholder = "Enter Your Starting Balance Here">
+            <button onclick = "setStartingBalance()">Set Balance</button>
+        </div>
+
+        <!--Setting up Current Balance-->
+        <span class = "currentBalance">
+            <label id = "balance">Current Balance: $0.00</label>
+        </span>
+
+        <br>
+        <br>
+        <br>
+
+        <!--Setting up Form for Transaction Here-->
+        <div class = "form-container">
+            <label for = "type">Type: </label>
+            <select id = "type">
+                <option value = "Income">Income</option>
+                <option value = "Expense">Expense</option>
+            </select>
+
+            <label for = "category">Category: </label>
+            <input type = "text" id = "category" placeholder = "ie. Food, Salary, Rent, Gift">
+
+            <label for = "amount">Amount: </label>
+            <input type = "number" id = "amount" placeholder = "Amount" required>
+
+            <label for = "date">Date: </label>
+            <input type = "date" id = "date" required>
+
+            <button onclick = "addTransaction()">Add Transaction</button>
+        </div>
+
+        <div class = "searchBalance">
+            <label id = "searchLabel">Search Transaction: </label>
+             <!--Search Input for Transactions-->
+             <input type = "text" id = "search" placeholder = "Search by type or category" oninput = "filterTransactions()">
+        </div>
+        
+        <!--Table for Transaction Here-->
+        <table>
+            <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>Category</th>
+                    <th>Amount</th>
+                    <th>Date</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="transactionTable"></tbody>
+        </table>
+        <br>
+        <br>
+        <!--Canvas for creating Data Chart Here-->
+        <canvas id = "summaryChart" width = "2000" height = "500"></canvas>
+        <br>
+        <br>
+        <button id = "buttonPDF" onclick = "pdf()">Dowload PDF</button>
+
+        <script src = "main.js"></script>
+    </body>
+</html>
